@@ -16,12 +16,33 @@ $ git init
 
 把文件添加到版本库
 touch readme.txt
-$ git add readme.txt
+$ git add readme.txt		//可以添加多个文件，后面一次提交
 $ git commit -m "wrote a readme file" readme.txt
 git status
 
+--查看暂存区和工作区的区别
+git diff
+--查看已提交仓库和暂存区的区别
+git diff --cached
 
 
-git log
+
+版本回退 
+git log			//git log --pretty=oneline 查看日志（以一行显示）
+git reset –-hard HEAD^		//当前版本用HEAD表示，上一个版本HEAD^，上上个HEAD^^，HEAD~100
+
+git reflog		//查看命令历史
+
+
+撤销修改和删除文件
+git checkout --readme.txt 	//对未添加到暂存区的内容做撤销
+git reset HEAD file			//对暂存区的修改撤销
+
+git rm file					//--删除文件(同添加，rm后再commit)
+git checkout -- file		//--撤销删除
+
+
+
+
 
 
