@@ -44,6 +44,44 @@ git checkout -- file		//--撤销删除
 
 
 
+远程仓库
+
+*注册帐号
+https://github.com	//网页注册帐号	ssinping ssinping@qq.com
+Create a new repo	//网页建立一个仓库 learngit
+
+*SSH Key
+ssh-keygen -t rsa -C "ssinping@qq.com"	//本地生成key
+xclip -sel c ~/.ssh/id_rsa.pub		//将公钥内容复制到剪切板
+GitHub 网站："account settings"》"Setting -> SSH Keys"->"New SSH key" 粘贴公钥内容确定
+
+*推送仓库
+cd learngit //定位到本地仓库目录
+git remote add origin git@github.com:michaelliao/learngit.git  //https方式关联本地和远程
+$ git remote add origin https://github.com/ssinping/learngit	//ssh方式关联本地和远程
+git push -u origin master	//推送到GITHUB，-u 表示第一次推送master分支的所有内容
+
+
+
+
+
+
+
+
+
+
+github提示Permission denied (publickey)，如何才能解决？
+ 前往 GitHub 网站的"account settings"，
+ 依次点击"Setting -> SSH Keys"->"New SSH key"
+Title处填写“id_rsa.pub”或其他任意信息。 key处原样拷贝下面命令的打印 `~/.ssh/id_rsa.pub` 文件的内容：
+``` cat ~/.ssh/id_rsa.pub ```
+如没有则按下述方法生成：  ssh-keygen -t rsa  一路回车......  最后，输入“ssh -T git@github.com”确认OK即可。
+再尝试输出就应该有了
+```cat ~/.ssh/id_rsa.pub
+
+
+
+
 
 
 
