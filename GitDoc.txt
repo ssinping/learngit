@@ -61,7 +61,7 @@ GitHub 网站："account settings"》"Setting -> SSH Keys"->"New SSH key" 粘贴
 cd learngit //定位到本地仓库目录
 git remote add origin git@github.com:michaelliao/learngit.git  //https方式关联本地和远程
 $ git remote add origin https://github.com/ssinping/learngit	//ssh方式关联本地和远程
-git push -u origin master	//推送到GITHUB，-u 表示第一次推送master分支的所有内容
+git push -u origin master	//推送到GITHUB，-u 表示第一次推送master分支的所有内容 --force 内容不一致时强制同步
 
 
 *克隆仓库
@@ -72,10 +72,23 @@ $ git clone https://github.com/usern/repositoryname.git		//也可用这一条
 
 
 
+分支管理
 
 
 
 
+标签管理
+tag就是一个让人容易记住的有意义的名字，它跟某个commit绑在一起。
+$ git branch		//查看分支
+$ git checkout master	//进入分支
+$ git tag v1.0		//写入标签
+$ git tag		//查看所有标签
+$ git tag -a <tagname> -m "blablabla..."可以指定标签信息。
+
+$ git push origin <tagname>		//推送一个本地标签
+$ git push origin --tags		//推送全部未推送过的本地标签
+$ git tag -d <tagname>		  //删除一个本地标签
+$ git push origin :refs/tags/<tagname>		//删除一个远程标签
 
 
 ##################问题：##############################################
@@ -91,9 +104,19 @@ Title处填写“id_rsa.pub”或其他任意信息。 key处原样拷贝下面�
 
 
 
+推送仓库出错：
+[root@361way shell]# git push -u origin master
+To https://361way:mypassword@github.com/361way/shell.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://361way:mypassword@github.com/361way/shell.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first merge the remote changes (e.g.,
+hint: 'git pull') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 
-
-
+本地和远端的内容可能不一致，可采取强制同步
+[root@361way shell]# git push -u origin master --force
 
 
 
