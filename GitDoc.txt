@@ -44,6 +44,8 @@ git checkout -- file		//--撤销删除
 
 
 
+
+
 远程仓库
 
 *注册帐号
@@ -62,6 +64,9 @@ $ git remote add origin https://github.com/ssinping/learngit	//ssh方式关联�
 git push -u origin master	//推送到GITHUB，-u 表示第一次推送master分支的所有内容
 
 
+*克隆仓库
+$ git clone git@github.com:ssinping/learngit.git	//从远程克隆仓库到本地
+$ git clone https://github.com/usern/repositoryname.git		//也可用这一条
 
 
 
@@ -69,6 +74,11 @@ git push -u origin master	//推送到GITHUB，-u 表示第一次推送master分�
 
 
 
+
+
+
+
+##################问题：##############################################
 
 github提示Permission denied (publickey)，如何才能解决？
  前往 GitHub 网站的"account settings"，
