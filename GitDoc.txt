@@ -91,6 +91,28 @@ $ git tag -d <tagname>		  //删除一个本地标签
 $ git push origin :refs/tags/<tagname>		//删除一个远程标签
 
 
+
+
+
+
+内网Git服务器
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ##################问题：##############################################
 
 github提示Permission denied (publickey)，如何才能解决？
